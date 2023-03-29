@@ -1,0 +1,15 @@
+<div style="display: flex;justify-content: space-between">
+    <mat-form-field>
+        <mat-label>Buscar</mat-label>
+        <input #keywordInput (keyup)="filtrar(keywordInput.value)" (change)="filtrar(keywordInput.value)" matInput type="text">
+    </mat-form-field>
+    <div class="example-button-container">
+        <button mat-raised-button color="succ" (click)="ordenar()">Ordenar</button>
+    </div>
+</div>
+
+<div *ngFor="let pokemon of pokemonListPage">
+    <app-pokemon [pokemon]="pokemon" (deleteEvent)="borrar($event)"></app-pokemon>
+</div>
+<mat-paginator [length]="pokemonList.length" [pageSize]="itemsPage" (page)='paginar($event)' [pageSizeOptions]="opcions" showFirstLastButtons>
+</mat-paginator>

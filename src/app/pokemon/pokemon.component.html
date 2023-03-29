@@ -1,0 +1,11 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title-group>
+            <mat-card-title> {{pokemon.name | titlecase }} </mat-card-title>
+            <mat-card-subtitle>{{pokemon.descr }} </mat-card-subtitle>
+        </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-actions align="end">
+        <button mat-button color="warn" (click)="borrar()">Borrar</button>
+    </mat-card-actions>
+</mat-card>
