@@ -55,6 +55,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   paginar(paginacion: any) {
+    this.itemsPage = paginacion.pageSize
     let actual = paginacion.pageIndex * paginacion.pageSize
     this.pokemonListPage = this.pokemonList.slice(
       actual,
@@ -73,6 +74,7 @@ export class PokemonListComponent implements OnInit {
     this.pokemonList.splice(this.pokemonList.indexOf(pokemon), 1)
     this.pokemonListPage = this.pokemonList.slice(0, this.itemsPage)
     this.actualPokemonList = this.pokemonListPage;
+    this.getPkmnDescription(this.pokemonListPage)
   }
 
   filtrar(filterValue: string) : void{
